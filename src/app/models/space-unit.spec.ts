@@ -12,7 +12,6 @@ describe('SpaceUnit Hierarchy', () => {
     robot = new Robot();
   });
 
-  // Test creation and initialization
   it('should create a Spacecraft with correct initial values', () => {
     expect(spacecraft.health).toBe(100);
     expect(spacecraft.maxHealth).toBe(100);
@@ -31,7 +30,6 @@ describe('SpaceUnit Hierarchy', () => {
     expect(robot.damage).toBe(15);
   });
 
-  // Test takeDamage
   it('should reduce health when Spacecraft takes damage', () => {
     spacecraft.takeDamage(30);
     expect(spacecraft.health).toBe(70);
@@ -42,7 +40,6 @@ describe('SpaceUnit Hierarchy', () => {
     expect(spacecraft.health).toBe(0);
   });
 
-  // Test repair
   it('should increase health when Robot is repaired', () => {
     robot.takeDamage(20);
     robot.repair(10);
@@ -54,17 +51,14 @@ describe('SpaceUnit Hierarchy', () => {
     expect(spacecraft.health).toBe(100);
   });
 
-  // Test move
   it('should return correct move message for Station', () => {
     expect(station.move()).toBe('Station adjusts orbit');
   });
 
-  // Test attack
   it('should return correct attack damage for Spacecraft', () => {
     expect(spacecraft.attack()).toBe(20);
   });
 
-  // Test specialAbility
   it('should return correct special ability for Robot', () => {
     expect(robot.specialAbility()).toBe('Robot deploys repair drones');
   });
